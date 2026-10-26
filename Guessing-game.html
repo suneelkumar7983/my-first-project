@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>The Scratch-Style Number Game</h2>
+  <p>I am thinking of a number between 1 and 100.</p>
+  
+  <input id="guess" type="number" placeholder="Enter guess">
+  <button onclick="checkGuess()">Check</button>
+  
+  <p id="result">Good luck!</p>
+
+  <script>
+    // This is like setting a variable in Scratch at the start
+    let secretNumber = Math.floor(Math.random() * 100) + 1;
+
+    function checkGuess() {
+      // Get the number the user typed
+      let userGuess = document.getElementById("guess").value;
+      let output = document.getElementById("result");
+
+      // This is exactly like an IF/ELSE block in Scratch!
+      if (userGuess == secretNumber) {
+        output.innerHTML = "🎉 Correct! You won!";
+      } else if (userGuess < secretNumber) {
+        output.innerHTML = "📈 Too low! Try a bigger number.";
+      } else {
+        output.innerHTML = "📉 Too high! Try a smaller number.";
+      }
+    }
+  </script>
+</body>
+</html>
